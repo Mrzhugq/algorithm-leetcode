@@ -1,6 +1,6 @@
 package array;
 
-class BackspaceStringCompare {
+public class BackspaceStringCompare_844 {
     // 用栈更简单一些
     public boolean backspaceCompare(String s, String t) {
         int sSkipNum = 0, tSkipNum = 0; // 记录#的数量
