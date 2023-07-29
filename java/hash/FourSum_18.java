@@ -17,6 +17,7 @@ public class FourSum_18 {
         Arrays.sort(nums);
         for (int k = 0; k < nums.length; k++) {
             // 剪枝
+            // nums[i] >= 0代表后面都是正数了，并且nums[i]以及大于target了。后面不可能再求和等于target
             if (nums[k] >= 0 && nums[k] > target) {
                 break;
             }
