@@ -9,17 +9,17 @@ import java.util.Deque;
  */
 public class RemoveAllAdjacentDuplicatesInString_1047 {
     public String removeDuplicates(String s) {
-        Deque<Character> deque = new ArrayDeque<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for (int i = 0; i < s.length(); i++) {
-            if (deque.isEmpty() || s.charAt(i) != deque.peek()) {
-                deque.push(s.charAt(i));
+            if (stack.isEmpty() || s.charAt(i) != stack.peek()) {
+                stack.push(s.charAt(i));
             } else {
-                deque.pop();
+                stack.pop();
             }
         }
         StringBuilder sb = new StringBuilder();
-        while (!deque.isEmpty()) {
-            sb.append(deque.pop());
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
         }
         return sb.reverse().toString();
     }

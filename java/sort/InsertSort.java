@@ -1,8 +1,5 @@
 package sort;
 
-import java.util.Arrays;
-import java.util.Random;
-
 /**
  * 直接插入排序
  * 思想就是：[0, end] 已经有序，把 end+1 位置的值插入前面，使得 [0,end+1]有序
@@ -32,14 +29,4 @@ public class InsertSort {
         }
     }
 
-
-    public static void main(String[] args) {
-        int[] nums = new int[10];
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            nums[i] = random.nextInt(20);
-        }
-        new InsertSort().insertSort(nums);
-        System.out.println(Arrays.toString(nums));
-    }
 }

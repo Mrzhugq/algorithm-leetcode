@@ -13,21 +13,21 @@ import java.util.ArrayDeque;
 public class ValidParentheses_20 {
     public boolean isValid(String s) {
         if (s.length() % 2 == 1) return false;
-        ArrayDeque<Character> deque = new ArrayDeque<>();  // LinkedList也行
+        ArrayDeque<Character> stack = new ArrayDeque<>();  // LinkedList也行
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if (ch == '(') {
-                deque.push(')');
+                stack.push(')');
             } else if (ch == '{') {
-                deque.push('}');
+                stack.push('}');
             } else if (ch == '[') {
-                deque.push(']');
-            } else if (deque.isEmpty() || ch != deque.peek()) {
+                stack.push(']');
+            } else if (stack.isEmpty() || ch != stack.peek()) {
                 return false;
-            } else { // ch == deque.peek()
-                deque.pop();
+            } else { // ch == stack.peek()
+                stack.pop();
             }
         }
-        return deque.isEmpty();
+        return stack.isEmpty();
     }
 }
