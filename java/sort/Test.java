@@ -5,6 +5,7 @@ import java.util.Random;
 
 /**
  * 测试类
+ * https://blog.csdn.net/Edward_Asia/article/details/121419975
  */
 public class Test {
 
@@ -16,7 +17,12 @@ public class Test {
         }
         System.out.println(Arrays.toString(nums));
         //new InsertSort().insertSort(nums);
-        new ShellSort().shellSort(nums);
+        //new ShellSort().shellSort(nums);
+        //new SelectSort().selectSort(nums);
+        //new HeapSort().heapSort(nums);
+        //new BubbleSort().bubbleSort(nums);
+        //new MergeSort().mergeSort(nums);
+        new CountSort().countSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
