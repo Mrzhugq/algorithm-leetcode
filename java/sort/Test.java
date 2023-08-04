@@ -22,7 +22,8 @@ public class Test {
         //new HeapSort().heapSort(nums);
         //new BubbleSort().bubbleSort(nums);
         //new MergeSort().mergeSort(nums);
-        new CountSort().countSort(nums);
+        //new CountSort().countSort(nums);
+        new QuickSort().quickSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
