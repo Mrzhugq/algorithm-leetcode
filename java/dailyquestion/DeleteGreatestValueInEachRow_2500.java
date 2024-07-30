@@ -1,4 +1,4 @@
-package day;
+package dailyquestion;
 
 import java.util.Arrays;
 
