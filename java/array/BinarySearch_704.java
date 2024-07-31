@@ -1,13 +1,16 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/binary-search/">二分查找</a>
+ */
 public class BinarySearch_704 {
     public int search(int[] nums, int target) {
         int left = 0;
-        int rigth = nums.length - 1; // [left, rigth]
-        while(left <= rigth) {
-            int mid = left + ((rigth - left) / 2); // 防止溢出
+        int right = nums.length - 1; // [left, right]
+        while(left <= right) {
+            int mid = left + ((right - left) / 2); // 防止溢出
             if (nums[mid] > target) {
-                rigth = mid - 1;
+                right = mid - 1;
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else {
@@ -19,11 +22,11 @@ public class BinarySearch_704 {
 
     public int search2(int[] nums, int target) {
         int left = 0;
-        int rigth = nums.length; // [left, rigth)
-        while(left < rigth) {
-            int mid = left + ((rigth - left) / 2); // 防止溢出
+        int right = nums.length; // [left, right)
+        while(left < right) {
+            int mid = left + ((right - left) / 2); // 防止溢出
             if (nums[mid] > target) {
-                rigth = mid;
+                right = mid;
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else {

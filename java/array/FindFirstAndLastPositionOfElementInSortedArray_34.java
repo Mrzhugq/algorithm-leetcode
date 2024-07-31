@@ -1,11 +1,15 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/">在排序数组中查找元素的第一个和最后一个位置</a>
+ */
 class FindFirstAndLastPositionOfElementInSortedArray_34 {
+    // [5,7,7,8,8,10]   8
     public int[] searchRange(int[] nums, int target) {
         int leftBorder = getLeftBorder(nums, target);
-        int rigthBorder = getRightBorder(nums, target);
-        if (leftBorder == -2 || rigthBorder == -2) return new int[]{-1, -1};
-        if (rigthBorder - leftBorder > 1) return new int[]{leftBorder + 1, rigthBorder - 1};
+        int rightBorder = getRightBorder(nums, target);
+        if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1};
+        if (rightBorder - leftBorder > 1) return new int[]{leftBorder + 1, rightBorder - 1};
         return new int[]{-1, -1};
     }
 

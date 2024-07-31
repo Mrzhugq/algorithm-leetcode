@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/search-insert-position/description/">搜索插入位置</a>
+ */
 class SearchInsertPosition_35 {
     // 查找找到第一个 大于等于target的位置
     public int searchInsert(int[] nums, int target) {
