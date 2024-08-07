@@ -3,6 +3,9 @@ package array;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <a href="https://leetcode.cn/problems/fruit-into-baskets/description/">水果成篮</a>
+ */
 public class FruitIntoBaskets_904 {
     // 求只包含两种元素的最长连续子序列
     public int totalFruit(int[] fruits) {
