@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/remove-element/description/">移除元素</a>
+ */
 class RemoveElement_27 {
     public int removeElement(int[] nums, int val) {
         int low = 0;

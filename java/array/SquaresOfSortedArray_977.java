@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/squares-of-a-sorted-array/description/">有序数组的平方</a>
+ */
 class SquaresOfSortedArray_977 {
     public int[] sortedSquares(int[] nums) {
         int left = 0;

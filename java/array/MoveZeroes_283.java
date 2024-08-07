@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * <a href="https://leetcode.cn/problems/move-zeroes/description/">移动零</a>
+ */
 class MoveZeroes_283 {
     public void moveZeroes(int[] nums) {
         // 把不等于0的移到前面
