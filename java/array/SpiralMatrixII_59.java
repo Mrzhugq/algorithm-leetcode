@@ -1,8 +1,7 @@
 package array;
 
-import java.util.Arrays;
-
 /**
+ * <a href="https://leetcode.cn/problems/spiral-matrix-ii/description/">螺旋矩阵 II</a>
  * 给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
  */
 public class SpiralMatrixII_59 {
@@ -13,11 +12,10 @@ public class SpiralMatrixII_59 {
         int mid = n / 2;              // 矩阵中间的位置
         int offset = 1;               // 控制每一圈里每一条边遍历的长度
         int count = 1;                // 用来给矩阵空赋值
-        int i, j;
 
         while (loop-- != 0) {
-            i = startX;
-            j = startY;
+            int i = startX;
+            int j = startY;
             // 上行 从左到右(左闭右开)
             for (j = startY; j < n - offset; j++) {
                 res[i][j] = count++;
@@ -82,3 +80,37 @@ public class SpiralMatrixII_59 {
         return res;
     }
 }
+
+/*
+-- select d.name as Department, e1.name as Employee, e1.salary
+-- from employee e1
+-- join department d
+-- on e1.departmentId = d.id
+-- where 3 > (
+--     select count(distinct e2.salary)
+--     from Employee e2
+--     where e2.Salary > e1.Salary
+-- )
+
+
+SELECT
+    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM
+    Employee e1
+JOIN
+    Department d
+ON e1.DepartmentId = d.Id
+WHERE
+    3 > (SELECT
+            COUNT(DISTINCT e2.Salary)
+        FROM
+            Employee e2
+        WHERE
+            e2.Salary > e1.Salary
+                AND e1.DepartmentId = e2.DepartmentId
+        )
+;
+
+
+
+ */
