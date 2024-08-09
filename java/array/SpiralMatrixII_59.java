@@ -9,7 +9,6 @@ public class SpiralMatrixII_59 {
         int[][] res = new int[n][n];
         int startX = 0, startY = 0;   // 每循环一个圈的起始位置
         int loop = n / 2;             // 每个圈循环几次
-        int mid = n / 2;              // 矩阵中间的位置
         int offset = 1;               // 控制每一圈里每一条边遍历的长度
         int count = 1;                // 用来给矩阵空赋值
 
@@ -37,6 +36,9 @@ public class SpiralMatrixII_59 {
             startY++;
             offset += 1;
         }
+
+        // 矩阵中间的位置
+        int mid = n / 2;
         if (n % 2 == 1) {
             res[mid][mid] = count;
         }
@@ -80,37 +82,3 @@ public class SpiralMatrixII_59 {
         return res;
     }
 }
-
-/*
--- select d.name as Department, e1.name as Employee, e1.salary
--- from employee e1
--- join department d
--- on e1.departmentId = d.id
--- where 3 > (
---     select count(distinct e2.salary)
---     from Employee e2
---     where e2.Salary > e1.Salary
--- )
-
-
-SELECT
-    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
-FROM
-    Employee e1
-JOIN
-    Department d
-ON e1.DepartmentId = d.Id
-WHERE
-    3 > (SELECT
-            COUNT(DISTINCT e2.Salary)
-        FROM
-            Employee e2
-        WHERE
-            e2.Salary > e1.Salary
-                AND e1.DepartmentId = e2.DepartmentId
-        )
-;
-
-
-
- */
