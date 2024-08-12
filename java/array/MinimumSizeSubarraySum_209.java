@@ -1,8 +1,5 @@
 package array;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * <a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">长度最小的子数组</a>
  */
