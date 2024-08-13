@@ -1,12 +1,12 @@
 package linked;
 
 /**
+ * <a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/">相交链表</a>
  * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
  */
 public class IntersectionOfTwoLinkedListsLcci_160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode curA = headA;
-        ListNode curB = headB;
+        ListNode curA = headA, curB = headB;
         int lenA = 0, lenB = 0;
         // 求长度
         while (curA != null) {
