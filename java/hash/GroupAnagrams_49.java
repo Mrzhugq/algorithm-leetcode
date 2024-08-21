@@ -1,8 +1,10 @@
 package hash;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
+ * <a href="https://leetcode.cn/problems/group-anagrams/description/">字母异位词分组</a>
  * 给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
  */
 public class GroupAnagrams_49 {
@@ -38,10 +40,18 @@ public class GroupAnagrams_49 {
             char[] array = str.toCharArray();
             Arrays.sort(array);
             String key = new String(array);
-            List<String> list = map.getOrDefault(key, new ArrayList<>());
-            list.add(str);
-            map.put(key, list);
+            map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
+
+            // List<String> list = map.getOrDefault(key, new ArrayList<>());
+            // list.add(str);
+            // map.put(key, list);
         }
         return new ArrayList<List<String>>(map.values());
+    }
+
+    // stream 流
+    public List<List<String>> groupAnagrams3(String[] strs) {
+        Collection<List<String>> values = Arrays.stream(strs).collect(Collectors.groupingBy(s -> Arrays.toString(s.codePoints().sorted().toArray()))).values();
+        return new ArrayList<>(values);
     }
 }
