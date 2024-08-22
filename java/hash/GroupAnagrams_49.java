@@ -51,7 +51,8 @@ public class GroupAnagrams_49 {
 
     // stream 流
     public List<List<String>> groupAnagrams3(String[] strs) {
-        Collection<List<String>> values = Arrays.stream(strs).collect(Collectors.groupingBy(s -> Arrays.toString(s.codePoints().sorted().toArray()))).values();
-        return new ArrayList<>(values);
+        return new ArrayList<>(Arrays.stream(strs)
+                .collect(Collectors.groupingBy(s -> Arrays.toString(s.codePoints().sorted().toArray())))
+                .values());
     }
 }
