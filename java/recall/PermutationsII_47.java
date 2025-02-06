@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * <a href="https://leetcode.cn/problems/permutations-ii/description/">全排列 II</a>
+ * <p>
  * 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
  */
 public class PermutationsII_47 {
@@ -26,7 +28,8 @@ public class PermutationsII_47 {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            // 如果同一树层nums[i - 1]使用过则，直接跳过
+            // 如果同一树层nums[i - 1]未被使用过则，直接跳过
+            // !used[i - 1]、used[i - 1] 都行，前者能够提前剪枝
             if (i > 0 && !used[i - 1] && nums[i - 1] == nums[i]) {
                 continue;
             }
