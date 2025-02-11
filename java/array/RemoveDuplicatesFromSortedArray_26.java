@@ -14,4 +14,21 @@ class RemoveDuplicatesFromSortedArray_26 {
         }
         return low + 1;
     }
+
+    public int removeDuplicates2(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        int slow = 1, fast = 1;
+        while (fast < nums.length) {
+            if (nums[fast- 1] != nums[fast]) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+
+        return slow;
+    }
 }
